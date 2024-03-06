@@ -13,7 +13,13 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        //  $events = Event::with('categorie:titre,id', 'location:ville,id')->get();
+        $events= Event::all();
+        // dd($events);
+
+       // dd($events[0]->categorie->titre);
+    //    dd($events[0]->localisation->ville);
+        return view('admin.event-statue',compact('events'));
     }
 
     /**
@@ -63,4 +69,28 @@ class EventController extends Controller
     {
         //
     }
+     public function accept($id){
+        // dd($id);
+        $event = event::find($id);
+        //dd($event->statue);
+       if ($event) {
+        $event->statue=1;
+        $event->save();
+        //dd($event->statue);
+        return redirect()->route('events.index');
+    }
+    return null; 
+     }
+
+     public function reject($id){
+        // dd($id);
+        $event = event::find($id);
+        //dd($event->statue);
+       if ($event) {
+        $event->delete();
+        return redirect()->route('events.index');
+    }
+    return null; 
+     }
+
 }

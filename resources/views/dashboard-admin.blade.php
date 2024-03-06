@@ -13,7 +13,7 @@
                         </h3>
                         <ul class="space-y-2">
                             <li>
-                                <a href="{{ route('admin.events.index') }}" class="text-blue-500 hover:underline">
+                                <a href="{{ route('events.index') }}" class="text-blue-500 hover:underline">
                                     {{ __('Liste des Événements') }}
                                 </a>
                             </li>
@@ -23,7 +23,7 @@
                                 </a> --}}
                             </li>
                             <li>
-                                <a href="{{ route('admin.categories') }}" class="text-blue-500 hover:underline">
+                                <a href="{{ route('categories.index') }}" class="text-blue-500 hover:underline">
                                     {{ __('Gestion des Catégories') }}
                                 </a>
                             </li>

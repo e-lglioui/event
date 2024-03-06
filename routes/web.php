@@ -29,12 +29,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile', [ProfileController::class, 'role'])->name('devenir.organisateur');
 });
 
-Route::middleware(['auth', 'role:admin'])->group(function () {
-    Route::prefix('admin')->group(function () {
-        Route::get('events', [EventController::class, 'index'])->name('admin.events.index');
-       // Route::get('statistics', [StatisticsController::class, 'index'])->name('admin.statistics');
-        Route::get('categories', [CategorieController::class, 'index'])->name('admin.categories');
-    });
+// web.php
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
+    Route::get('events', [EventController::class, 'index'])->name('events.index');;
+    Route::post('/accept-event/{id}', [EventController::class, 'accept'])->name('accept.event');
+    Route::post('events/{id}', [EventController::class, 'reject'])->name('reject.event');
+    Route::resource('categories', CategorieController::class);
 });
+
 
 require __DIR__.'/auth.php';

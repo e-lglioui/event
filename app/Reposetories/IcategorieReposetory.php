@@ -7,7 +7,7 @@ interface IcategorieReposetory{ public function getAll();
     public function getById($id);
     public function create(array $data);
     public function delete($id);
-    public function update($id);
-    public function existe($name);//si la categore avec le meme noùm est existe dans table categories
+    public function update($id,array $data);
+    public function existe($name);//si la categore avec le meme nom est existe dans table categories
 
 }

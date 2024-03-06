@@ -10,12 +10,20 @@ use Illuminate\Http\Request;
 
 class CategorieController extends Controller
 {
+    protected $CategorieService;
+
+    public function __construct(CategorieService $CategorieService)
+    {
+        $this->CategorieService = $CategorieService;
+    }
+    
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.categories');
+        $categories = Categorie::all(); 
+        return view('admin.categories',compact('categories'));
     }
 
     /**
@@ -23,7 +31,7 @@ class CategorieController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create');
+        return view('admin.categorie-create');
     }
 
     /**
@@ -32,12 +40,12 @@ class CategorieController extends Controller
     public function store(StoreCategorieRequest $request)
     {
         $data = $request->validate([
-            'name' => 'required|unique:categories',
-            // Add other validation rules as needed
+            'titre' => 'required|unique:categories',
+            'descreption' => 'required|unique:categories',
         ]);
 
         $category = $this->CategorieService->createCategory($data);
-        return redirect()->route('categories.index');
+        return redirect()->route('admin.categories');
     }
 
     /**
@@ -46,7 +54,7 @@ class CategorieController extends Controller
     public function show($id)
     {
         $category = $this->CategorieService->getCategoryById($id);
-        return view('categories.show', compact('category'));
+        return view('admin.categorie-show', compact('category'));
     }
 
     /**
@@ -55,7 +63,7 @@ class CategorieController extends Controller
     public function edit($id)
     {
         $category = $this->CategorieService->getCategoryById($id);
-        return view('categories.edit', compact('category'));
+        return view('admin.categorie-edit', compact('category'));
     }
 
     /**
@@ -63,9 +71,10 @@ class CategorieController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $data = $request->validate([
-            'name' => 'required|unique:categories,name,' . $id,
-            // Add other validation rules as needed
+            'titre' => 'required|unique:categories',
+            'descreption' => 'required|unique:categories',
         ]);
 
         $this->CategorieService->updateCategory($id, $data);
