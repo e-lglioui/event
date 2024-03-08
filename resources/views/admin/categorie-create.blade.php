@@ -10,12 +10,12 @@
 
                         <div class="mb-4">
                             <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
-                            <input type="text" name="title" id="title" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+                            <input type="text" name="titre" id="title" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
                         </div>
 
                         <div class="mb-4">
                             <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
-                            <textarea name="description" id="description" rows="4" class="mt-1 p-2 border border-gray-300 rounded-md w-full"></textarea>
+                            <textarea name="descreption" id="descreption" rows="4" class="mt-1 p-2 border border-gray-300 rounded-md w-full"></textarea>
                         </div>
 
                         <div class="flex items-center">

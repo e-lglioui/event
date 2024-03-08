@@ -14,10 +14,10 @@
                         <ul class="space-y-2">
 
                             <li>
-                                <a href="{{ route('statistics.index') }}" class="text-blue-500 hover:underline">
+                                {{-- <a href="{{ route('statistics.index') }}" class="text-blue-500 hover:underline">
                                         {{ __('Statistiques') }}
                                     </a> 
-                                </li>
+                                </li> --}}
 
                             <li>
                                 <a href="{{ route('events.valider') }}" class="text-blue-500 hover:underline">

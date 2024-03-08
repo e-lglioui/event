@@ -39,13 +39,15 @@ class CategorieController extends Controller
      */
     public function store(StoreCategorieRequest $request)
     {
-        $data = $request->validate([
+       $data= $request->validate([
             'titre' => 'required|unique:categories',
             'descreption' => 'required|unique:categories',
+             
         ]);
-
+        $data['statu'] = 1;
+           //dd($data);
         $category = $this->CategorieService->createCategory($data);
-        return redirect()->route('admin.categories');
+        return redirect()->route('categories.index');
     }
 
     /**

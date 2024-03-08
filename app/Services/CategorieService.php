@@ -24,7 +24,7 @@ class CategorieService
     }
 
     public function createCategory(array $data)
-    {
+    {      //dd($data);
         return $this->CategorieRepository->create($data);
     }
 

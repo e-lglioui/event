@@ -11,8 +11,8 @@ class Categorie extends Model
     use HasFactory;
     protected $fillable = [
         'titre',
-        'description',
-        'statu', 
+        'descreption',
+        'statu',   
     ];
 
     public function event()
