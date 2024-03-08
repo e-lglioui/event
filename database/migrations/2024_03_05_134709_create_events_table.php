@@ -23,6 +23,8 @@ return new class extends Migration
              $table->bigInteger('localisation_id')->unsigned()->index()->nullable();
             $table->foreign('localisation_id')->references('id')->on('localisations')->onDelete('cascade');
             $table->timestamps();
+            $table->text('img');
+
         });
     }
 

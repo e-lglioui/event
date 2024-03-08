@@ -12,16 +12,19 @@
                             {{ __('Navigation') }}
                         </h3>
                         <ul class="space-y-2">
+
                             <li>
-                                <a href="{{ route('events.index') }}" class="text-blue-500 hover:underline">
+                                <a href="{{ route('statistics.index') }}" class="text-blue-500 hover:underline">
+                                        {{ __('Statistiques') }}
+                                    </a> 
+                                </li>
+
+                            <li>
+                                <a href="{{ route('events.valider') }}" class="text-blue-500 hover:underline">
                                     {{ __('Liste des Événements') }}
                                 </a>
                             </li>
-                            <li>
-                                {{-- <a href="{{ route('admin.statistics') }}" class="text-blue-500 hover:underline">
-                                    {{ __('Statistiques') }}
-                                </a> --}}
-                            </li>
+                            
                             <li>
                                 <a href="{{ route('categories.index') }}" class="text-blue-500 hover:underline">
                                     {{ __('Gestion des Catégories') }}
@@ -33,8 +36,11 @@
 
                 <div class="col-span-3">
                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
-                         Contenu principal du tableau de bord administrateur 
-                        Ajoutez ici le contenu principal du tableau de bord administrateur
+                       <h1 class="text-center p-3">Statistiques:</h1>
+                         <h2> <strong> TOp Categorie :</strong> </h2>
+                         <h2> <strong> TOp Event :</strong> </h2>
+                         <h2> <strong> TOp Organisateur :</strong> </h2>
+                         <h2> <strong> TOp Localisation :</strong> </h2>
                     </div> 
                 </div>
             </div>
