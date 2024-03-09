@@ -4,7 +4,6 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <h2 class="text-2xl font-semibold mb-4">Event Details</h2>
-
                     <div class="bg-white overflow-hidden border border-gray-200 rounded-md shadow-md">
                         <img src="{{ asset('storage/'.$event->img) }}" alt="{{ $event->titre }}" class="w-full h-40 object-cover">
                         <div class="p-4">
@@ -15,6 +14,15 @@
                             <p class="text-gray-700">Category: {{ $event->categorie->titre }}</p>
 
                             <a href="{{ route('event.edit', $event->id) }}" class="text-green-500 hover:text-green-700 ml-2">Update</a>
+
+                            <form action="{{ route('tickit.affiche') }}" method="POST" class="inline">
+                                @csrf
+                                @method('POST') 
+                                <input type="hidden" name="event" value="{{$event->id}}"> 
+                                <button type="submit" class="text-bleu-500 hover:text-green-700 ml-2">Tickit</button>
+                            </form>
+
+
                             <form action="{{ route('event.destroy', $event->id) }}" method="POST" class="inline">
                                 @csrf
                                 @method('DELETE')

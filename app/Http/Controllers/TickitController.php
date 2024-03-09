@@ -5,23 +5,25 @@ namespace App\Http\Controllers;
 use App\Models\tickit;
 use App\Http\Requests\StoretickitRequest;
 use App\Http\Requests\UpdatetickitRequest;
-
-class TickitController extends Controller
+use App\Models\event;
+use Illuminate\Http\Request;
+class TickitController extends Controller  
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
-    }
+    public function affiche(Request $request)
+     {   $tickits = tickit::where('event_id', $request->event)->get();
+       
+        return view('organisateur.tickit', compact('tickits'));
+     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        //
+    public function create(event $event)
+    {    
+        return view ('organisateur.tickit-create');
     }
 
     /**
@@ -29,7 +31,10 @@ class TickitController extends Controller
      */
     public function store(StoretickitRequest $request)
     {
-        //
+        // // dd($request->event);
+        // $tickits = tickit::where('event_id', $request->event)->get();
+       
+        // return view('organisateur.tickit', compact('tickits'));
     }
 
     /**

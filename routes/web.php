@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\TickitController;
 use App\Http\Controllers\StatistiqueController;
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::post('/profile', [ProfileController::class, 'role'])->name('devenir.organisateur');
+  
+
 });
 
 // web.php
@@ -42,6 +45,8 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
  Route::middleware(['auth', 'role:organisateur'])->prefix('organisateur')->group(function () {
     // Route::get('event', [EventController::class, 'event'])->name('events.event');
     Route::resource('event', EventController::class);
+  
+    Route::get('tickit', TickitController::class)->name('tickit.affiche');
 });
 
 require __DIR__.'/auth.php';

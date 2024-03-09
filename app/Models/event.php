@@ -4,7 +4,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\localisation;
-
+use App\Models\tickit;
 class event extends Model
 {
     use HasFactory;
@@ -29,5 +29,8 @@ class event extends Model
     public function localisation()
     {
         return $this->belongsTo(localisation::class);
+    }
+    public function tickits(){
+        return $this->hasMany(tickit::class);
     }
 }
