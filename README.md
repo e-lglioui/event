@@ -31,8 +31,6 @@ La société **Evento** ambitionne de développer une plateforme novatrice dédi
 - **Statistiques :** Les administrateurs ont accès à des statistiques détaillées.
 
 ---
-
-## Bonus
 - **Filtrage avancé :** Les utilisateurs peuvent filtrer les événements par date ou lieu.
 - **Connexion sociale :** Les utilisateurs peuvent se connecter via leur compte Google ou Facebook.
 - **Notification par e-mail :** Les utilisateurs reçoivent un e-mail contenant leur ticket une fois leur réservation confirmée.
@@ -42,44 +40,59 @@ La société **Evento** ambitionne de développer une plateforme novatrice dédi
 ---
 
 ## Technologies Utilisées
-- **Frontend :** React.js / Vue.js
-- **Backend :** Node.js avec Express.js
-- **Base de données :** MongoDB / MySQL
-- **Authentification :** JWT avec options d'intégration OAuth (Google, Facebook)
-- **Autres outils :** Docker pour la conteneurisation, CI/CD pour le déploiement
-
+- **Framework :** Laravel
+- **Frontend :** Blade Templates 
+- **Base de données :** MySQL
 ---
 
 ## Installation et Déploiement
 ### Prérequis
-- Node.js (v14 ou plus récent)
-- MongoDB ou MySQL
-- Docker (optionnel pour le déploiement conteneurisé)
+- PHP (v8.0 ou plus récent)
+- Composer
+- MySQL
+
 
 ### Étapes
 1. Clonez ce dépôt :
    ```bash
-   git clone https://github.com/votre-repo/evento.git
+   git clone https://github.com/e-lglioui/event.git
    ```
 2. Accédez au répertoire du projet :
    ```bash
-   cd evento
+   cd event
    ```
-3. Installez les dépendances :
+3. Installez les dépendances avec Composer :
    ```bash
-   npm install
+   composer install
    ```
-4. Configurez les variables d'environnement dans un fichier `.env` :
+4. Configurez le fichier `.env` :
    ```env
-   PORT=5000
-   DATABASE_URL=your_database_url
-   JWT_SECRET=your_jwt_secret
+   APP_NAME=Evento
+   APP_ENV=local
+   APP_KEY=base64:generated_app_key
+   APP_DEBUG=true
+   APP_URL=http://localhost
+
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=evento
+   DB_USERNAME=root
+   DB_PASSWORD=your_password
    ```
-5. Démarrez le serveur :
+5. Générez la clé de l'application :
    ```bash
-   npm start
+   php artisan key:generate
    ```
-6. Accédez à l'application via [http://localhost:5000](http://localhost:5000).
+6. Exécutez les migrations pour configurer la base de données :
+   ```bash
+   php artisan migrate
+   ```
+7. Lancez le serveur de développement :
+   ```bash
+   php artisan serve
+   ```
+8. Accédez à l'application via [http://localhost:8000](http://localhost:8000).
 
 ---
 
