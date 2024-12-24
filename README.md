@@ -1,66 +1,106 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Evento - Gestion et Réservation d'Événements
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Contexte du Projet
+La société **Evento** ambitionne de développer une plateforme novatrice dédiée à la gestion et à la réservation des places d'événements. L'objectif est de fournir une expérience utilisateur optimale aux participants, organisateurs et administrateurs. Cette plateforme permettra aux utilisateurs de découvrir, réserver et générer des tickets pour une variété d'événements, tandis que les organisateurs auront la possibilité de créer et de gérer leurs propres événements.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Fonctionnalités Requises
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Utilisateur
+- **Inscription :** Les utilisateurs peuvent s'inscrire en fournissant leur nom, adresse e-mail et mot de passe.
+- **Connexion :** Les utilisateurs peuvent se connecter à leur compte en utilisant leurs identifiants.
+- **Réinitialisation de mot de passe :** Les utilisateurs peuvent recevoir un e-mail pour réinitialiser leur mot de passe.
+- **Consultation des événements :** Les utilisateurs peuvent consulter la liste des événements disponibles avec pagination.
+- **Filtrage par catégorie :** Les utilisateurs peuvent filtrer les événements par catégorie.
+- **Recherche :** Les utilisateurs peuvent rechercher des événements par titre.
+- **Détails d'un événement :** Les utilisateurs peuvent visualiser la description, la date, le lieu et les places disponibles d'un événement.
+- **Réservation :** Les utilisateurs peuvent réserver une place pour un événement.
+- **Génération de ticket :** Les utilisateurs peuvent générer un ticket une fois leur réservation confirmée.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Organisateur
+- **Création d'événements :** Les organisateurs peuvent créer de nouveaux événements en spécifiant le titre, la description, la date, le lieu, la catégorie et le nombre de places disponibles.
+- **Gestion des événements :** Les organisateurs peuvent gérer leurs événements.
+- **Statistiques :** Les organisateurs ont accès à des statistiques sur les réservations de leurs événements.
+- **Validation des réservations :** Les organisateurs peuvent choisir entre une acceptation automatique des réservations ou une validation manuelle.
 
-## Learning Laravel
+### Administrateur
+- **Gestion des utilisateurs :** Les administrateurs peuvent gérer les utilisateurs en restreignant leur accès.
+- **Gestion des catégories :** Les administrateurs peuvent ajouter, modifier ou supprimer des catégories d'événements.
+- **Validation des événements :** Les administrateurs peuvent valider les événements créés par les organisateurs avant leur publication.
+- **Statistiques :** Les administrateurs ont accès à des statistiques détaillées.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Bonus
+- **Filtrage avancé :** Les utilisateurs peuvent filtrer les événements par date ou lieu.
+- **Connexion sociale :** Les utilisateurs peuvent se connecter via leur compte Google ou Facebook.
+- **Notification par e-mail :** Les utilisateurs reçoivent un e-mail contenant leur ticket une fois leur réservation confirmée.
+- **Export PDF :** Les utilisateurs peuvent générer leur ticket au format PDF.
+- **Système de paiement :** Les développeurs peuvent intégrer un système de paiement pour les réservations d'événements.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## Technologies Utilisées
+- **Frontend :** React.js / Vue.js
+- **Backend :** Node.js avec Express.js
+- **Base de données :** MongoDB / MySQL
+- **Authentification :** JWT avec options d'intégration OAuth (Google, Facebook)
+- **Autres outils :** Docker pour la conteneurisation, CI/CD pour le déploiement
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## Installation et Déploiement
+### Prérequis
+- Node.js (v14 ou plus récent)
+- MongoDB ou MySQL
+- Docker (optionnel pour le déploiement conteneurisé)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### Étapes
+1. Clonez ce dépôt :
+   ```bash
+   git clone https://github.com/votre-repo/evento.git
+   ```
+2. Accédez au répertoire du projet :
+   ```bash
+   cd evento
+   ```
+3. Installez les dépendances :
+   ```bash
+   npm install
+   ```
+4. Configurez les variables d'environnement dans un fichier `.env` :
+   ```env
+   PORT=5000
+   DATABASE_URL=your_database_url
+   JWT_SECRET=your_jwt_secret
+   ```
+5. Démarrez le serveur :
+   ```bash
+   npm start
+   ```
+6. Accédez à l'application via [http://localhost:5000](http://localhost:5000).
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Contribution
+Les contributions sont les bienvenues ! Veuillez suivre les étapes suivantes :
+1. Forkez ce dépôt.
+2. Créez une branche pour votre fonctionnalité :
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. Commitez vos modifications :
+   ```bash
+   git commit -m "Ajout de votre fonctionnalité"
+   ```
+4. Poussez vos modifications :
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. Ouvrez une Pull Request.
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Licence
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
